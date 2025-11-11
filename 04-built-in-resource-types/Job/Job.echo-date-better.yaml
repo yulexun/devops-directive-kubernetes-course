@@ -4,9 +4,13 @@ metadata:
   name: echo-date-better
   namespace: 04--job
 spec:
+  # run up to 2 copy of this pod in parallel
   parallelism: 2
+  # run until two completion
   completions: 2
+  # allow how long a pod can run before k tears it down
   activeDeadlineSeconds: 100
+  # Specifies the number of retries before marking this job failed. Defaults to 6
   backoffLimit: 1
   template:
     metadata:
