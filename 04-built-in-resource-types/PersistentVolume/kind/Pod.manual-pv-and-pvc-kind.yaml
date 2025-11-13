@@ -8,7 +8,7 @@ spec:
       image: nginx:1.26.0
       volumeMounts:
         - name: storage
-          mountPath: /some/mount/path
+          mountPath: /mnt/nginx
   volumes:
     - name: storage
       persistentVolumeClaim:

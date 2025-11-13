@@ -20,7 +20,7 @@ spec:
           image: nginx:1.26.0
           volumeMounts:
             - name: data
-              mountPath: /some/mount/path
+              mountPath: /mnt/nginx
       volumes:
         - name: data
           persistentVolumeClaim:

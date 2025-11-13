@@ -11,7 +11,7 @@ spec:
     storage: 100Mi
   storageClassName: standard
   local:
-    path: /some/path/in/container # Replace with the path to your local storage
+    path: /mnt/pv1 # Replace with the path to your local storage
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -34,7 +34,7 @@ spec:
     storage: 100Mi
   storageClassName: standard
   local:
-    path: /some/path/in/container # Replace with the path to your local storage
+    path: /mnt/pv2 # Replace with the path to your local storage
   nodeAffinity:
     required:
       nodeSelectorTerms:
