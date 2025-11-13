@@ -3,6 +3,7 @@
   "packages": [
     "act@latest",
     "civo@latest",
+    "cloud-provider-kind@latest",
     "envsubst@latest",
     "gh@latest",
     "go-task@latest",
@@ -31,7 +32,7 @@
     "init_hook": [
       "export GOBIN=$(git rev-parse --show-toplevel)/bin",
       "export PATH=$GOBIN:$PATH",
-      "go install sigs.k8s.io/cloud-provider-kind@v0.2.0",
+      "go install sigs.k8s.io/cloud-provider-kind@latest",
       "alias k=kubectl",
       "alias t=task",
       "alias tl='task --list-all'"

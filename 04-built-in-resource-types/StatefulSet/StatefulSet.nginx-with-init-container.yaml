@@ -3,6 +3,7 @@ kind: StatefulSet
 metadata:
   name: nginx-with-init-conainer
 spec:
+  # headless service because we are going to address each pod independently
   serviceName: nginxs
   replicas: 3
   selector:

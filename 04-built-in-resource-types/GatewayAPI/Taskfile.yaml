@@ -37,7 +37,9 @@ tasks:
           --repo https://charts.konghq.com \
           -n kong \
           --create-namespace \
-          --version 0.12.0
+          --version 0.12.0 \
+          --set gateway.enabled=true \
+          --set ingressController.enabled=true
       - cmd: gum style "🚨 We will learn more about CustomResourceDefinitions in a later part of the course... for now just 🤞"
         silent: true
       # Kong requires the latest CRDs
@@ -53,7 +55,10 @@ tasks:
           gum style \
           "💡 To enable TCPRoutes, some additional configuration is required.
 
-          See: https://docs.konghq.com/kubernetes-ingress-controller/3.1.x/guides/services/tcp/"
+          See: https://docs.konghq.com/kubernetes-ingress-controller/3.1.x/guides/services/tcp/
+          
+          Run to access from localhost since the LB is in the docker container network: \
+          kubectl port-forward -n kong svc/kong-kong-proxy 8080:80"
         silent: true
 
   06-delete-namespace:
