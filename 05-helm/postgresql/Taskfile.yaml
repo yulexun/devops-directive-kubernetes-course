@@ -6,7 +6,7 @@ env:
   PADDING: "1 1"
   MARGIN: "1 1"
   POSTGRES_VERSION_1: 15.4.1
-  POSTGRES_VERSION_2: 15.4.2
+  POSTGRES_VERSION_2: 18.1.8
   NAMESPACE: 05--postgresql
 
 tasks:
@@ -59,7 +59,8 @@ tasks:
     cmds:
       - |
         helm install postgresql bitnami/postgresql \
-          --version=${POSTGRES_VERSION_1} \
+          --version=${POSTGRES_VERSION_1} \          kubectl get pods
+          helm status postgresql
           --create-namespace \
           --values=values.yaml
     desc: Install PostgreSQL chart
